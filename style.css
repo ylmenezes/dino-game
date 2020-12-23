@@ -1,0 +1,48 @@
+body{
+    background-color: #fafafa;
+}
+
+
+.dino {
+    background-image: url(img/dino.png);
+    position: absolute;
+    width: 60px;
+    height: 60px; 
+    bottom: 0;
+}
+
+.cacto {
+    background-image: url(img/cactus.png);
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 0;
+}
+
+.game-over {
+    text-align: center;
+    color: #666;
+    margin: 50px 0;
+    font-family: arial;
+}
+
+@keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+.bg {
+    position: absolute;
+    bottom: 0px;
+    background-image: url('img/background.png');
+    background-repeat: repeat-x;
+    animation: slideright 1500s infinite linear;
+    -webkit-animation: slideright 1500s infinite linear;
+    width: 100%;
+    height: 200px;
+}
+  
