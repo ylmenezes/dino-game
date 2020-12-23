@@ -1,8 +1,10 @@
-const dino = document.querySelector( '.dino' );
-const bg = document.querySelector( '.bg' );
-let isJumping = false;
-let isGameOver = false;
-let position = 0;
+const dino  = document.querySelector( '.dino' );
+const bg    = document.querySelector( '.bg' );
+
+let isJumping   = false;
+let isGameOver  = false;
+let position    = 0;
+let score       = 0;
 
 function handleKeyUp(event)
 {
@@ -19,6 +21,8 @@ function pular()
 
     let upInterval = setInterval(() => {
         if( position >= 150 ){
+            setScore();
+
             clearInterval(upInterval);
 
             let downInterval = setInterval(() => {
@@ -61,7 +65,7 @@ function criarCacto()
 
         clearInterval(leftTimer);
         isGameOver = true;
-        document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+        document.body.innerHTML = '<h1 class="game-over">Fim de jogo <br> Você fez '+score+' pontos</h1> <a onclick="restart()" class="button"> Reiniciar o Jogo</a>';
 
       }else{
 
@@ -69,9 +73,20 @@ function criarCacto()
         cactus.style.left = cactusPosition + 'px';
 
       }
-    }, 25);
+    }, 30);
   
     setTimeout(criarCacto, randomTime);
+}
+
+function setScore()
+{
+    score += 1;
+    document.querySelector( '.pontuacao' ).innerHTML = score;
+}
+
+function restart()
+{
+    window.location.reload();
 }
   
 criarCacto();

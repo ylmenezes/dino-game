@@ -40,9 +40,20 @@ body{
     bottom: 0px;
     background-image: url('img/background.png');
     background-repeat: repeat-x;
-    animation: slideright 1500s infinite linear;
-    -webkit-animation: slideright 1500s infinite linear;
+    animation: slideright 1300s infinite linear;
+    -webkit-animation: slideright 1300s infinite linear;
     width: 100%;
     height: 200px;
+}
+
+.button {
+    background-color: aqua;
+    color: white;
+    padding: 10px 50px;
+    cursor: pointer;
+    width: 125px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
   
